@@ -1,12 +1,15 @@
 ##mybatis
 
 
-Spring Boot 会自动加载 spring.datasource.* 相关配置，数据源就会自动注入到 sqlSessionFactory 中，sqlSessionFactory 会自动注入到 Mapper 中
+Spring Boot 会自动加载 spring.datasource.* 相关配置，数据源就会自动注入到 sqlSessionFactory 中，
+sqlSessionFactory 会自动注入到Mapper中
 
-
-mybatis.config-location=classpath:mybatis/mybatis-config.xml
-mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
 指定了 Mybatis 基础配置文件和实体类映射文件的地址
+```ruby
+mybatis.config-location=classpath:mybatis/mybatis-config.xml
+mybatis.mapper-locations=classpath:mybatis/mapper/*.xml 
+```
+
 
 
 mybatis-config.xml 配置
