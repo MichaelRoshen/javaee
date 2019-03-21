@@ -10,7 +10,7 @@ mybatis.mapper-locations=classpath:mybatis/mapper/*.xml
 
 
 mybatis-config.xml 配置
-
+```ruby
 <configuration>
     <typeAliases>
         <typeAlias alias="Integer" type="java.lang.Integer" />
@@ -21,6 +21,7 @@ mybatis-config.xml 配置
         <typeAlias alias="LinkedList" type="java.util.LinkedList" />
     </typeAliases>
 </configuration>
+```
 这里也可以添加一些 Mybatis 基础的配置
 
 等效于
