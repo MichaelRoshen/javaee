@@ -30,3 +30,30 @@ mybatis-config.xml
    <mapper resource="mybatis/mapper/UserMapper.xml"/>
 </mappers>
 ```
+
+
+
+resultMap（用于设置返回值的类型和映射关系）
+```ruby
+<resultMap id="userResultMap" type="com.chenc.demo.model.UserDO">
+    <id property="id" column="id"/>
+    <result property="name" column="name"/>
+    <result property="address" column="address"/>
+    <result property="age" column="age"/>
+    <result property="sex" column="sex"/>
+</resultMap>
+
+可以使用resultType
+<select id="list" resultType="com.chenc.demo.model.UserDO">
+    select <include refid="Columns"/> from users
+</select>
+
+也可以用resultMap
+<select id="list" resultMap="userResultMap">
+    select <include refid="Columns"/> from users
+</select>
+
+<select id="show" resultMap="userResultMap" parameterType="java.lang.Long">
+    select <include refid="Columns"/> from users where id = #{userId}
+</select>
+```

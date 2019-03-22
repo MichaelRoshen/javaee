@@ -16,11 +16,21 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
+    @Autowired(required = false)
     UserMapper userMapper;
 
     @Override
     public List<UserDO> list() {
         return userMapper.list();
+    }
+
+    @Override
+    public void insert(UserDO userDO) {
+        userMapper.insert(userDO);
+    }
+
+    @Override
+    public UserDO get(Long userId) {
+        return userMapper.show(userId);
     }
 }
